@@ -36,7 +36,7 @@ npm run monaco-compile-check;
 # npm run strict-null-check;
 
 echo "Compiling VS Code for $ARCHIE_ELECTRON_ARCH";
-npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min;
+npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min --allowEmpty;
 
 echo "Patching resources/linux/debian/postinst.template"
 sed -i "s/code-oss/vscodium/" resources/linux/debian/postinst.template
