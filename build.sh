@@ -39,7 +39,7 @@ echo "Installing built-in extensions";
 node build/lib/builtInExtensions.js;
 
 echo "Compiling VS Code for $ARCHIE_ELECTRON_ARCH";
-npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min --unsafe-perm;
+npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min;
 
 echo "Executing compile";
 yarn --verbose compile;
