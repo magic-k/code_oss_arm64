@@ -15,4 +15,4 @@ docker run \
 -e ARCHIE_TARGET_DEPENDENCIES \
 -v $(pwd):/root/build \
 -v $(pwd)/out:/root/output \
-$docker_image /bin/bash -c \"cd /root/build && . /root/kitchen/tools/archie_start_build.sh\";
+$docker_image /bin/bash -c "cd /root/build && . /root/kitchen/tools/archie_start_build.sh";
