@@ -35,17 +35,8 @@ npm run monaco-compile-check;
 # echo "Executing strict-null-check";
 # npm run strict-null-check;
 
-echo "Installing built-in extensions";
-node build/lib/builtInExtensions.js;
-
 echo "Compiling VS Code for $ARCHIE_ELECTRON_ARCH";
 npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min;
-
-echo "Executing compile";
-yarn --verbose compile;
-
-echo "Executing download-builtin-extensions";
-yarn --verbose download-builtin-extensions;
 
 echo "Patching resources/linux/debian/postinst.template"
 sed -i "s/code-oss/vscodium/" resources/linux/debian/postinst.template
