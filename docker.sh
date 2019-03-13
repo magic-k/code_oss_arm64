@@ -8,7 +8,7 @@ ARCHIE_TARGET_DEPENDENCIES="libgtk2.0-0 libglib2.0-dev libsecret-1-0 libsecret-1
 
 # Run the container unconfined and with CAP_SYS_ADMIN, for bind mounts
 echo "Binding workspace and executing script for [${ARCHIE_STRATEGY}/${ARCHIE_ARCH}]";
-
+echo "
 docker run \
 --security-opt apparmor:unconfined --cap-add SYS_ADMIN \
 -e ARCHIE_STRATEGY \
@@ -17,4 +17,5 @@ docker run \
 -e ARCHIE_TARGET_DEPENDENCIES \
 -v $(pwd):/root/build \
 -v $(pwd)/out:/root/output \
-$docker_image /bin/bash -c "cd /root/build && . /root/kitchen/tools/archie_start_build.sh";
+$docker_image /bin/bash -c \"cd /root/build && . /root/kitchen/tools/archie_start_build.sh\";
+"
