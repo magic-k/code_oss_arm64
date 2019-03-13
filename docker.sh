@@ -9,11 +9,8 @@ ARCHIE_TARGET_DEPENDENCIES="libgtk2.0-0 libglib2.0-dev libsecret-1-0 libsecret-1
 # Run the container unconfined and with CAP_SYS_ADMIN, for bind mounts
 echo "Binding workspace and executing script for [${ARCHIE_STRATEGY}/${ARCHIE_ARCH}]";
 
-echo "$(pwd)"
-
 docker run \
 --security-opt apparmor:unconfined --cap-add SYS_ADMIN \
--e GITHUB_TOKEN=$GITHUB_TOKEN \
 -e ARCHIE_STRATEGY \
 -e ARCHIE_ARCH \
 -e ARCHIE_HOST_DEPENDENCIES \
