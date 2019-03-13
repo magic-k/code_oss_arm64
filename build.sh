@@ -25,7 +25,6 @@ CHILD_CONCURRENCY=1 yarn;
 echo "Changing default telemetry settings"
 REPLACEMENT="s/'default': true/'default': false/"
 sed -i -E "$REPLACEMENT" src/vs/platform/telemetry/common/telemetryService.ts
-sed -i -E "$REPLACEMENT" src/vs/workbench/services/crashReporter/electron-browser/crashReporterService.ts
 
 echo "Running hygiene";
 npm run gulp -- hygiene;
