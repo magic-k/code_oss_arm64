@@ -13,7 +13,7 @@ pre_install:
 
 
 script:
-  - docker.sh
+  - . docker.sh
 
 post_install:
   - echo "***********************************"
