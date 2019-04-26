@@ -26,8 +26,8 @@ echo "Changing default telemetry settings"
 REPLACEMENT="s/'default': true/'default': false/"
 sed -i -E "$REPLACEMENT" src/vs/platform/telemetry/common/telemetryService.ts
 
-echo "Running hygiene";
-npm run gulp -- hygiene;
+#echo "Running hygiene";
+#npm run gulp -- hygiene;
 
 echo "Running monaco-compile-check";
 npm run monaco-compile-check;
