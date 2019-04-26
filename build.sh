@@ -49,8 +49,8 @@ grep -rl --exclude-dir=.git -E $TELEMETRY_URLS . | xargs sed -i -E $REPLACEMENT
 echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb";
 yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb;
 
-echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
-yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
+#echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
+#yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
 
 echo "Leaving code directory";
 cd ..;
