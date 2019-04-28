@@ -11,7 +11,7 @@ echo "Setting current owner as owner of code folder";
 chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 
 cd code;
-git checkout release/1.33.1
+git checkout release/1.33
 
 cd ..;
 
