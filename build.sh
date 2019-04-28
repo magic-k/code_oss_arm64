@@ -11,7 +11,7 @@ echo "Setting current owner as owner of code folder";
 chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 
 cd code;
-git checkout release/1.33
+git checkout release/1.33.1
 
 cd ..;
 
@@ -31,8 +31,8 @@ echo "Changing default telemetry settings"
 REPLACEMENT="s/'default': true/'default': false/"
 sed -i -E "$REPLACEMENT" src/vs/platform/telemetry/common/telemetryService.ts
 
-#echo "Running hygiene";
-#npm run gulp -- hygiene;
+echo "Running hygiene";
+npm run gulp -- hygiene;
 
 echo "Running monaco-compile-check";
 npm run monaco-compile-check;
