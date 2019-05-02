@@ -22,35 +22,32 @@ export CXX="$CXX $extra_links"
 
 CHILD_CONCURRENCY=1 yarn;
 
-echo "Changing default telemetry settings"
-REPLACEMENT="s/'default': true/'default': false/"
-sed -i -E "$REPLACEMENT" src/vs/platform/telemetry/common/telemetryService.ts
-
 echo "Running hygiene";
 npm run gulp -- hygiene;
 
 echo "Running monaco-compile-check";
 npm run monaco-compile-check;
 
-# echo "Executing strict-null-check";
-# npm run strict-null-check;
+#echo "Executing strict-null-check";
+#npm run strict-null-check;
+
+echo "Installing built-in extensions";
+node build/lib/builtInExtensions.js;
 
 echo "Compiling VS Code for $ARCHIE_ELECTRON_ARCH";
-npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min --allowEmpty;
+npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min --unsafe-perm;
 
-echo "Patching resources/linux/debian/postinst.template"
-sed -i "s/code-oss/vscodium/" resources/linux/debian/postinst.template
+echo "Executing compile";
+yarn --verbose compile;
 
-echo "Undoing telemetry"
-TELEMETRY_URLS="(dc\.services\.visualstudio\.com)|(vortex\.data\.microsoft\.com)"
-REPLACEMENT="s/$TELEMETRY_URLS/0\.0\.0\.0/g"
-grep -rl --exclude-dir=.git -E $TELEMETRY_URLS . | xargs sed -i -E $REPLACEMENT
+echo "Executing download-builtin-extensions";
+yarn --verbose download-builtin-extensions;
 
 echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb";
 yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb;
 
-#echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
-#yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
+echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
+yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
 
 echo "Leaving code directory";
 cd ..;
