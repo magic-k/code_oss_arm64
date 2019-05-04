@@ -59,7 +59,7 @@ echo "Moving deb packages for release";
 mv ./code/.build/linux/deb/$ARCHIE_ARCH/deb/*.deb /root/output;
 
 echo "Moving rpm packages for release";
-mv ./code/.build/linux/rpm/$ARCHIE_RPM_ARCH/rpmbuild/RPMS/$ARCHIE_RPM_ARCH/*.rpm /root/output;
+#mv ./code/.build/linux/rpm/$ARCHIE_RPM_ARCH/rpmbuild/RPMS/$ARCHIE_RPM_ARCH/*.rpm /root/output;
 
 echo "Extracting deb archive";
 dpkg -x /root/output/*.deb output/extracted;
