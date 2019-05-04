@@ -47,7 +47,7 @@ echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb";
 yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb;
 
 echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
-yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
+#yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
 
 echo "Leaving code directory";
 cd ..;
