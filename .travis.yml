@@ -1,6 +1,14 @@
 os: linux
 sudo: required
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: /root/output/*.deb
+  skip_cleanup: true
+  draft: true
+  
 services:
   - docker
 
