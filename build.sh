@@ -67,5 +67,5 @@ echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
 #cd output/extracted;
 
 #echo "Binary components of output --------------------------------------------------"
-#find . -type f -exec file {} ";" | grep ELF
+find . | grep deb
 echo "------------------------------------------------------------------------------"
