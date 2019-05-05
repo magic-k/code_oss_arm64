@@ -67,5 +67,5 @@ mv ./code/.build/linux/deb/$ARCHIE_ARCH/deb/*.deb /root/output;
 #cd output/extracted;
 
 #echo "Binary components of output --------------------------------------------------"
-find . | grep deb
+find . -name "code*\.deb"
 echo "------------------------------------------------------------------------------"
