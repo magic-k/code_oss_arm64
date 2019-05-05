@@ -49,14 +49,14 @@ yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb;
 echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
 #yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
 
-#echo "Leaving code directory";
-#cd ..;
+echo "Leaving code directory";
+cd ..;
 
-#echo "Creating output directory";
-#mkdir output;
+echo "Creating output directory";
+mkdir output;
 
-#echo "Moving deb packages for release";
-#mv ./code/.build/linux/deb/$ARCHIE_ARCH/deb/*.deb /root/output;
+echo "Moving deb packages for release";
+mv ./code/.build/linux/deb/$ARCHIE_ARCH/deb/*.deb /root/output;
 
 #echo "Moving rpm packages for release";
 #mv ./code/.build/linux/rpm/$ARCHIE_RPM_ARCH/rpmbuild/RPMS/$ARCHIE_RPM_ARCH/*.rpm /root/output;
