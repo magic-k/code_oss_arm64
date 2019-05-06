@@ -11,7 +11,7 @@ echo "Setting current owner as owner of code folder";
 chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 
 echo "Synchronizing overlays folder";
-#rsync -avh ./overlays/build/ ./code/build/;
+cp ./overlays/product.json ./code/;
 
 echo "Entering code directory";
 cd code;
