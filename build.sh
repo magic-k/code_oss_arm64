@@ -10,8 +10,8 @@ git clone "https://github.com/Microsoft/vscode.git" code;
 echo "Setting current owner as owner of code folder";
 chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 
-echo "Synchronizing overlays folder";
-cp ./overlays/product.json ./code/;
+#echo "Synchronizing overlays folder";
+#cp ./overlays/product.json ./code/;
 
 echo "Entering code directory";
 cd code;
