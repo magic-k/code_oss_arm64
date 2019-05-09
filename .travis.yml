@@ -14,7 +14,8 @@ deploy:
   file_glob: true
   file: out/*
   skip_cleanup: true
-  on.tags: true
+  on:
+      tags: true
   
 services:
   - docker
