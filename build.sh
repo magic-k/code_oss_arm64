@@ -16,7 +16,7 @@ chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 echo "Entering code directory";
 cd code;
 
-git checkout release/1.34
+git checkout release/1.35
 
 extra_links="-I$compiler_root_directory/usr/include/libsecret-1 -I$compiler_root_directory/usr/include/glib-2.0 -I$compiler_root_directory/usr/lib/${ARCHIE_HEADERS_GNU_TRIPLET}/glib-2.0/include";
 export CC="$CC $extra_links"
