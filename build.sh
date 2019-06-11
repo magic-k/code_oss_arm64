@@ -45,10 +45,21 @@ yarn --verbose compile;
 echo "Executing download-builtin-extensions";
 yarn --verbose download-builtin-extensions;
 
+echo "Leaving code directory";
+cd ..;
+
+echo "Patching product.json for marketplace";
+python patche_json_product.py
+
+cp product_out.json ./VSCode-linux-arm64/resources/app/product.json
+
+echo "Entering code directory";
+cd code;
+
 echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb";
 yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-deb;
 
-echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
+#echo "Starting vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm";
 #yarn run gulp vscode-linux-$ARCHIE_ELECTRON_ARCH-build-rpm;
 
 echo "Leaving code directory";
