@@ -1,6 +1,6 @@
 {
   "name": "Code",
-  "version": "1.36.0",
+  "version": "1.36.1",
   "distro": "8ecea2ce059e7f111cedbbade821372985c247f2",
   "author": {
     "name": "Microsoft Corporation"
@@ -51,7 +51,6 @@
     "vscode-ripgrep": "^1.2.5",
     "vscode-sqlite3": "4.0.7",
     "vscode-textmate": "^4.1.1",
-    "vsda": "git+https://monacotools.visualstudio.com/DefaultCollection/_git/vscode-debug-handshake#31bf016d04d013bb9b86117232e53e3ebb015c27",
     "xterm": "3.15.0-beta50",
     "xterm-addon-search": "0.1.0-beta6",
     "xterm-addon-web-links": "0.1.0-beta10",
