@@ -11,12 +11,12 @@ echo "Setting current owner as owner of code folder";
 chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 
 #echo "Synchronizing overlays folder";
-#cp ./overlays/product.json ./code/;
+cp ./overlays/package.json ./code/;
 
 echo "Entering code directory";
 cd code;
 
-#git checkout release/1.36
+git checkout release/1.36
 
 extra_links="-I$compiler_root_directory/usr/include/libsecret-1 -I$compiler_root_directory/usr/include/glib-2.0 -I$compiler_root_directory/usr/lib/${ARCHIE_HEADERS_GNU_TRIPLET}/glib-2.0/include";
 export CC="$CC $extra_links"
