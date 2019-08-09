@@ -35,6 +35,8 @@ npm run monaco-compile-check;
 echo "Installing built-in extensions";
 node build/lib/builtInExtensions.js;
 
+while sleep 5m; do echo "=====[ $SECONDS seconds, buildroot still building... ]====="; done &   
+
 echo "Compiling VS Code for $ARCHIE_ELECTRON_ARCH";
 npm run gulp -- vscode-linux-$ARCHIE_ELECTRON_ARCH-min --unsafe-perm;
 
@@ -81,3 +83,4 @@ mv ./code/.build/linux/deb/$ARCHIE_ARCH/deb/*.deb /root/output;
 #echo "Binary components of output --------------------------------------------------"
 find . -name "code*\.deb"
 echo "------------------------------------------------------------------------------"
+kill %1
