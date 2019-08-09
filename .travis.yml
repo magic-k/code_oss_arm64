@@ -18,14 +18,8 @@ deploy:
 services:
   - docker
 
-before_script:
-  - while sleep 5m; do echo "=====[ $SECONDS seconds, buildroot still building... ]====="; done &   
-
 script:
   - . docker.sh
-
-after_script:
-  - kill %1
   
 post_install:
   - echo "***********************************"
