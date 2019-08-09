@@ -19,7 +19,7 @@ services:
   - docker
 
 script:
-  - . docker.sh
+  - travis_wait . docker.sh
 
 post_install:
   - echo "***********************************"
