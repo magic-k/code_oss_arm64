@@ -17,6 +17,9 @@ git checkout release/1.37
 
 #echo "Synchronizing overlays folder";
 #cp ../overlays/package.json ./;
+#8192 is too much for travis
+sed -i s/8192/4096/g package.json
+
 extra_links="-I$compiler_root_directory/usr/include/libsecret-1 -I$compiler_root_directory/usr/include/glib-2.0 -I$compiler_root_directory/usr/lib/${ARCHIE_HEADERS_GNU_TRIPLET}/glib-2.0/include";
 export CC="$CC $extra_links"
 export CXX="$CXX $extra_links"
