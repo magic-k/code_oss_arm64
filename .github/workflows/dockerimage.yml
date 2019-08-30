@@ -12,3 +12,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: bash ./docker.sh
+      
+    - uses: actions/upload-artifact@master
+      with:
+        name: vscode-arm64
+        path: out/
