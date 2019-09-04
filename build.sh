@@ -13,7 +13,7 @@ chown ${USER:=$(/usr/bin/id -run)}:$USER -R code;
 echo "Entering code directory";
 cd code;
 
-git checkout release/1.37
+git checkout release/1.38
 
 #echo "Synchronizing overlays folder";
 #cp ../overlays/package.json ./;
