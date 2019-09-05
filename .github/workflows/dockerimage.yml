@@ -12,8 +12,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: bash ./docker.sh
-      
-    - uses: actions/upload-artifact@master
-      with:
-        name: vscode-arm64
-        path: out/
+    - name: Release
+        uses: docker://softprops/action-gh-release
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: out/*.deb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
