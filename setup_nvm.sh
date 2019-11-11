@@ -14,9 +14,9 @@ echo "Running NVM script";
 source ~/.nvm/nvm.sh;
 
 echo "Setting up NVM";
-nvm install 10.16.0;
-nvm use 10.16.0;
-nvm alias default 10.16.0;
+nvm install 12.4.0;
+nvm use 12.4.0;
+nvm alias default 12.4.0;
   
 echo "Setting python binding";
 npm config set python `which python`;
